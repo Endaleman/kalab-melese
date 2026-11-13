@@ -4,7 +4,7 @@ import { FaChalkboardTeacher, FaCamera, FaVideo } from "react-icons/fa";
 
 const experiences = [
     {
-        title: "Graphic Design and Video Editing Instructor",
+        title: "Graphic Design and Video Editing",
         meta: "Current",
         text: "Learning graphic design and video editing, helping students develop practical skills in visual communication and digital media production.",
         icon: <FaVideo />,
