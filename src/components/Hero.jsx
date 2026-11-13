@@ -1,116 +1,114 @@
+
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import backgroundImg from "../assets/Background2.jpg";
-import profileImg from "../assets/profile3.jpg";
+import backgroundImg from "../assets/kalab.jpg";
+import profileImg from "../assets/photo_kal.jpg";
 
 function Hero() {
     return (
         <section
             id="home"
-            className="relative min-h-screen flex items-center justify-center px-6 py-20 bg-cover bg-center bg-no-repeat"
-            style={{
-                backgroundImage: `url(${backgroundImg})`,
-            }}
+            className="relative min-h-screen flex items-center justify-center px-5 py-24 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${backgroundImg})` }}
         >
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/70"></div>
+            {/* Dark transparent overlay keeps the background visible */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-950/75 via-blue-950/65 to-cyan-950/55"></div>
 
             <motion.div
-                className="relative z-10 max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12"
-                initial={{ opacity: 0, y: 50 }}
+                className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] items-center gap-10 p-7 md:p-12 rounded-3xl border border-white/20 bg-slate-950/45 backdrop-blur-sm shadow-2xl"
+                initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
             >
-                {/* Profile Image */}
+                {/* Profile image */}
                 <div className="flex justify-center">
-                    <img
-                        src={profileImg}
-                        alt="Endale Gezhagn"
-                        className="w-72 h-72 md:w-80 md:h-80 rounded-full object-cover border-4 border-blue-500 shadow-2xl"
-                    />
+                    <div className="relative">
+                        <div className="absolute -inset-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 blur-xl opacity-50"></div>
+                        <img
+                            src={profileImg}
+                            alt="Kalab Melese"
+                            className="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-cyan-300 shadow-2xl"
+                        />
+                    </div>
                 </div>
 
-                {/* Content */}
+                {/* Hero text */}
                 <div className="text-center lg:text-left">
-                    <p className="text-blue-400 font-semibold tracking-wider uppercase mb-3">
+                    <p className="inline-block text-cyan-200 font-semibold tracking-widest uppercase text-sm mb-4 px-4 py-2 rounded-full border border-cyan-300/40 bg-cyan-400/10">
                         Welcome to My Portfolio
                     </p>
 
-                    <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-white">
+                    <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-5 text-white">
                         Hi, I'm{" "}
-                        <span className="text-blue-500">
-                            Endale Gezhagn
+                        <span className="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
+                            Kalab Melese
                         </span>
                     </h1>
 
-                    <div className="text-2xl md:text-3xl font-semibold text-gray-300 mb-6 h-12">
+                    <div className="text-xl md:text-3xl font-bold text-cyan-200 mb-6 min-h-12">
                         <TypeAnimation
                             sequence={[
-                                "Software Developer",
+                                "Water Engineer",
                                 1500,
-                                "Android Developer",
+                                "Primary School Teacher",
                                 1500,
-                                "Django Developer",
+                                "Graphic Designer",
                                 1500,
-                                "Machine Learning Engineer",
+                                "Video Editor",
                                 1500,
-                                "React Developer",
+                                "CCTV Installation Technician",
                                 1500,
                             ]}
                             repeat={Infinity}
                         />
                     </div>
 
-                    <p className="text-lg text-gray-300 max-w-2xl mb-8 leading-relaxed">
-                        I build modern web applications, Android systems,
-                        machine learning solutions, and scalable software that
-                        solve real-world problems.
+                    <p className="text-base md:text-lg text-slate-100 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+                        Water Engineering graduate from Arba Minch University
+                        with professional experience in primary education,
+                        CCTV installation, graphic design, and video editing.
+                        I enjoy combining technical knowledge, creativity,
+                        and practical skills to solve problems.
                     </p>
 
-                    {/* Stats */}
-                    <div className="flex flex-wrap justify-center lg:justify-start gap-8 mb-8">
-                        <div>
-                            <h3 className="text-3xl font-bold text-blue-500">
-                                10+
-                            </h3>
-                            <p className="text-gray-300">Projects</p>
+                    {/* Experience highlights */}
+                    <div className="grid grid-cols-3 gap-3 mb-9">
+                        <div className="rounded-xl border border-white/15 bg-white/10 p-3">
+                            <h3 className="text-2xl md:text-3xl font-bold text-cyan-300">2023</h3>
+                            <p className="text-xs md:text-sm text-slate-200 mt-1">Graduated</p>
                         </div>
 
-                        <div>
-                            <h3 className="text-3xl font-bold text-blue-500">
-                                5+
-                            </h3>
-                            <p className="text-gray-300">Technologies</p>
+                        <div className="rounded-xl border border-white/15 bg-white/10 p-3">
+                            <h3 className="text-2xl md:text-3xl font-bold text-cyan-300">2+</h3>
+                            <p className="text-xs md:text-sm text-slate-200 mt-1">Years Teaching</p>
                         </div>
 
-                        <div>
-                            <h3 className="text-3xl font-bold text-blue-500">
-                                3+
-                            </h3>
-                            <p className="text-gray-300">Years Learning</p>
+                        <div className="rounded-xl border border-white/15 bg-white/10 p-3">
+                            <h3 className="text-2xl md:text-3xl font-bold text-cyan-300">1+</h3>
+                            <p className="text-xs md:text-sm text-slate-200 mt-1">Year CCTV</p>
                         </div>
                     </div>
 
-                    {/* Buttons */}
+                    {/* Action buttons */}
                     <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                         <a
-                            href="#projects"
-                            className="px-8 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 transition font-semibold text-white"
+                            href="#resume"
+                            className="px-7 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold shadow-lg shadow-blue-900/30 hover:scale-105 hover:shadow-cyan-500/30 transition duration-300"
                         >
-                            View Projects
+                            View Experience
                         </a>
 
                         <a
                             href="#contact"
-                            className="px-8 py-3 rounded-xl border border-blue-500 hover:bg-blue-500/10 transition font-semibold text-white"
+                            className="px-7 py-3 rounded-xl border border-cyan-300 text-cyan-100 font-bold hover:bg-cyan-400 hover:text-slate-950 transition duration-300"
                         >
                             Contact Me
                         </a>
 
                         <a
-                            href="/Endale_Gezhagn_CV.pdf"
+                            href="/Kalab_Melese_CV.pdf"
                             download
-                            className="px-8 py-3 rounded-xl border border-gray-500 hover:border-blue-500 transition font-semibold text-white"
+                            className="px-7 py-3 rounded-xl border border-white/50 text-white font-bold hover:bg-white hover:text-slate-900 transition duration-300"
                         >
                             Download CV
                         </a>

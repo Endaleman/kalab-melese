@@ -1,3 +1,4 @@
+
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
@@ -36,26 +37,26 @@ function Contact() {
     return (
         <section
             id="contact"
-            className="min-h-screen flex items-center justify-center px-6 py-20"
+            className="min-h-screen flex items-center justify-center px-6 py-20 bg-white"
         >
             <motion.div
-                className="w-full max-w-3xl bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 md:p-12 shadow-2xl"
+                className="w-full max-w-3xl bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-lg"
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
             >
                 <div className="text-center mb-8">
-                    <p className="text-blue-400 uppercase tracking-wider font-semibold">
+                    <p className="text-blue-600 uppercase tracking-wider font-semibold">
                         Get In Touch
                     </p>
 
-                    <h2 className="text-4xl font-bold mt-2">
+                    <h2 className="text-4xl font-bold mt-2 text-slate-900">
                         Contact Me
                     </h2>
 
-                    <p className="text-gray-400 mt-3">
-                        Have a project idea or opportunity? Feel free to send me a message.
+                    <p className="text-slate-500 mt-3">
+                        Have an opportunity or question? Feel free to send me a message.
                     </p>
                 </div>
 
@@ -69,7 +70,7 @@ function Contact() {
                         name="from_name"
                         placeholder="Your Name"
                         required
-                        className="w-full px-5 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 focus:outline-none"
+                        className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100"
                     />
 
                     <input
@@ -77,7 +78,7 @@ function Contact() {
                         name="from_email"
                         placeholder="Your Email"
                         required
-                        className="w-full px-5 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 focus:outline-none"
+                        className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100"
                     />
 
                     <textarea
@@ -85,16 +86,15 @@ function Contact() {
                         rows="6"
                         placeholder="Your Message"
                         required
-                        className="w-full px-5 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 focus:outline-none resize-none"
+                        className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 resize-none"
                     />
 
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full flex items-center justify-center gap-3 py-4 rounded-xl font-semibold transition-all duration-300 bg-blue-600 hover:bg-blue-700 disabled:opacity-60"
+                        className="w-full flex items-center justify-center gap-3 py-4 rounded-xl font-semibold transition-all duration-300 bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-60"
                     >
                         <FaPaperPlane />
-
                         {loading ? "Sending..." : "Send Message"}
                     </button>
                 </form>
@@ -102,8 +102,8 @@ function Contact() {
                 {status && (
                     <div
                         className={`mt-6 text-center font-medium ${status.includes("successfully")
-                                ? "text-green-400"
-                                : "text-red-400"
+                                ? "text-green-600"
+                                : "text-red-600"
                             }`}
                     >
                         {status}

@@ -1,131 +1,92 @@
+
 import { motion } from "framer-motion";
+import { FaGraduationCap, FaChalkboardTeacher, FaCamera, FaPalette } from "react-icons/fa";
 
 const timelineData = [
     {
-        year: "2021 - 2025",
-        title: "Computer Science Student",
-        organization: "Dilla University",
-        description:
-            "Studied Computer Science with a focus on software engineering, web development, mobile applications, networking, databases, and artificial intelligence.",
+        year: "2023",
+        title: "Bachelor's Degree in Water Engineering",
+        organization: "Arba Minch University",
+        description: "Graduated with a Bachelor's degree in Water Engineering.",
+        icon: <FaGraduationCap />,
     },
     {
-        year: "2024",
-        title: "Android Developer",
-        organization: "Personal Projects",
-        description:
-            "Developed Android applications using Kotlin and Android Studio, including Recipe Apps and AI-powered solutions.",
+        year: "2 Years",
+        title: "Primary School Teacher",
+        organization: "Kal Mahala Academy",
+        description: "Taught primary school students and supported their educational development.",
+        icon: <FaChalkboardTeacher />,
     },
     {
-        year: "2024 - 2025",
-        title: "Machine Learning Developer",
-        organization: "Coffee Disease Detection Project",
-        description:
-            "Built an AI-powered coffee disease detection application using CNN and MobileNetV2 for image classification.",
+        year: "1 Year",
+        title: "CCTV Installation Technician",
+        organization: "Koppa Security",
+        description: "Installed and configured CCTV security camera systems.",
+        icon: <FaCamera />,
     },
     {
-        year: "2025",
-        title: "Full Stack Developer",
-        organization: "React & Django Projects",
-        description:
-            "Developed web applications including Car Rental Systems and Student Management Systems using React and Django.",
-    },
-    {
-        year: "Present",
-        title: "Software Developer",
-        organization: "Continuous Learning",
-        description:
-            "Expanding expertise in React, Django, Android Development, Java, Machine Learning, and modern software architectures.",
+        year: "Current",
+        title: "Graphic Design and Video Editing",
+        organization: "Current Learning / Teaching Role",
+        description: "Developing and applying skills in graphic design and video editing.",
+        icon: <FaPalette />,
     },
 ];
 
 function Timeline() {
     return (
-        <section
-            id="timeline"
-            className="min-h-screen py-20 px-6"
-        >
+        <section id="timeline" className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-cyan-100 py-24 px-6">
             <div className="max-w-5xl mx-auto">
-                {/* Header */}
                 <div className="text-center mb-16">
-                    <p className="text-blue-400 uppercase tracking-wider font-semibold">
+                    <span className="inline-block px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-bold uppercase tracking-widest">
                         My Journey
-                    </p>
+                    </span>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mt-2">
-                        Experience & Education
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mt-5">
+                        Education & <span className="text-blue-600">Experience</span>
                     </h2>
 
-                    <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-                        A timeline of my academic background, development experience,
-                        and technology journey.
+                    <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
+                        Important milestones in my academic and professional journey.
                     </p>
                 </div>
 
-                {/* Timeline */}
-                <div className="relative border-l-2 border-blue-500 ml-4 md:ml-0">
-                    {timelineData.map((item, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{
-                                opacity: 0,
-                                x: index % 2 === 0 ? -50 : 50,
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                x: 0,
-                            }}
-                            viewport={{ once: true }}
-                            transition={{
-                                duration: 0.6,
-                                delay: index * 0.15,
-                            }}
-                            className="mb-12 ml-8"
-                        >
-                            {/* Timeline Dot */}
-                            <div className="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px]" />
+                <div className="relative">
+                    <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 via-cyan-500 to-blue-300 rounded-full md:-translate-x-1/2" />
 
-                            {/* Card */}
-                            <div className="bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl p-6 shadow-xl">
-                                <span className="text-blue-400 font-semibold">
-                                    {item.year}
-                                </span>
+                    <div className="space-y-10">
+                        {timelineData.map((item, index) => (
+                            <motion.div
+                                key={item.title}
+                                initial={{ opacity: 0, x: index % 2 === 0 ? -35 : 35 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                className={`relative flex pl-16 md:pl-0 ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"}`}
+                            >
+                                <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 border-4 border-white shadow-lg text-white flex items-center justify-center text-lg z-10">
+                                    {item.icon}
+                                </div>
 
-                                <h3 className="text-2xl font-bold mt-2">
-                                    {item.title}
-                                </h3>
+                                <div className="w-full md:w-[44%] bg-white border border-blue-100 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                                    <span className="inline-block px-3 py-1 rounded-full bg-cyan-50 text-cyan-700 text-sm font-bold">
+                                        {item.year}
+                                    </span>
 
-                                <p className="text-gray-300 font-medium mt-1">
-                                    {item.organization}
-                                </p>
+                                    <h3 className="text-xl md:text-2xl font-bold text-slate-900 mt-4">
+                                        {item.title}
+                                    </h3>
 
-                                <p className="text-gray-400 mt-3 leading-relaxed">
-                                    {item.description}
-                                </p>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+                                    <p className="text-blue-600 font-semibold mt-2">
+                                        {item.organization}
+                                    </p>
 
-                {/* Stats */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-                    <div className="bg-white/5 rounded-2xl p-6 text-center">
-                        <h3 className="text-3xl font-bold text-blue-500">10+</h3>
-                        <p className="text-gray-400">Projects</p>
-                    </div>
-
-                    <div className="bg-white/5 rounded-2xl p-6 text-center">
-                        <h3 className="text-3xl font-bold text-blue-500">5+</h3>
-                        <p className="text-gray-400">Major Technologies</p>
-                    </div>
-
-                    <div className="bg-white/5 rounded-2xl p-6 text-center">
-                        <h3 className="text-3xl font-bold text-blue-500">3+</h3>
-                        <p className="text-gray-400">Years Learning</p>
-                    </div>
-
-                    <div className="bg-white/5 rounded-2xl p-6 text-center">
-                        <h3 className="text-3xl font-bold text-blue-500">100%</h3>
-                        <p className="text-gray-400">Commitment</p>
+                                    <p className="text-slate-600 mt-4 leading-relaxed">
+                                        {item.description}
+                                    </p>
+                                </div>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </div>
